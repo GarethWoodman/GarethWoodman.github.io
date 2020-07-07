@@ -16,21 +16,21 @@ buttonColours.forEach(function(button){
   })
 })
 
-// let smallBtn = document.querySelector('#small')
-// smallBtn.addEventListener('click', function(){ reset(16) })
-//
-// let mediumBtn = document.querySelector('#medium')
-// mediumBtn.addEventListener('click', function(){ reset(20) })
-//
-// let largeBtn = document.querySelector('#larger')
-// largeBtn.addEventListener('click', function(){ reset(24) })
-//
-// function reset(size){
-//   grid.forEach(function(element){element.style.backgroundColor = 'white';});
-//   removeGrid();
-//   createGrid(size)
-//   newGame();
-// }
+let smallBtn = document.querySelector('#small')
+smallBtn.addEventListener('click', function(){ reset(16) })
+
+let mediumBtn = document.querySelector('#medium')
+mediumBtn.addEventListener('click', function(){ reset(20) })
+
+let largeBtn = document.querySelector('#large')
+largeBtn.addEventListener('click', function(){ reset(24) })
+
+function reset(size){
+  grid.forEach(function(element){element.style.backgroundColor = 'white';});
+  removeGrid();
+  createGrid(size)
+  newGame();
+}
 
 
 gridWrapper.addEventListener('mousedown', function(){ mouseDown = true })
