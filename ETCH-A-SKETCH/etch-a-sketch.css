@@ -1,57 +1,62 @@
 grid-square {
-    display: inline-block;
-    border: 1px solid rgb(202, 202, 202);
-    margin: 0px;
-    width: 30px;
-    height: 30px;
+  display: inline-block;
+  border: 1px solid rgb(202, 202, 202);
+  margin: 0px;
+  width: 30px;
+  height: 30px;
 }
 
 #content {
-    min-width: 800px;
+  min-width: 800px;
+}
+
+div#left-bar {
+  display: inline-block
 }
 
 div#grid {
-    margin: auto;
-    margin-top: 20px;
+  margin: auto;
+  margin-top: 20px;
+  display: inline-block
 }
 
 h1 {
-    font-family: arial;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
+  font-family: 'H', 'Trebuchet MS', 'Helvetica';
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
 }
 
 #colours {
-    margin: auto;
-    margin-top: 20px;
-    background-color: white;
-    font-family: arial;
+  margin: auto;
+  margin-top: 20px;
+  background-color: white;
+  font-family: arial;
 }
 
 #colours > button, #small, #medium, #large {
-    margin-top: 10px;
-    border-radius: 4px;
-    border-width: 2px;
-    font-size: 13px;
-    padding: 5px;
-    font-family: arial;
-    width: 75px;
-    background-color: white;
-    border-style: solid;
+  margin-top: 10px;
+  border-radius: 4px;
+  border-width: 2px;
+  font-size: 13px;
+  padding: 5px;
+  font-family: arial;
+  width: 75px;
+  background-color: white;
+  border-style: solid;
 }
 
 .jscolor {
   width: 200px;
-height: 50px;
-font-family: arial;
-font-size: 40px;
-text-align: center;
-background-image: none;
-background-color: rgb(60, 142, 113);
-color: rgb(255, 255, 255);
-border-style: solid;
-border-radius: 4px;
-border-width: 2px;
-border-color: gray;
+  height: 50px;
+  font-family: arial;
+  font-size: 40px;
+  text-align: center;
+  background-image: none;
+  background-color: rgb(60, 142, 113);
+  color: rgb(255, 255, 255);
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 2px;
+  border-color: gray;
 }

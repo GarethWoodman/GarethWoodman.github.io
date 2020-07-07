@@ -11,19 +11,12 @@ let buttonColours = document.getElementById('colours').querySelectorAll('button'
 buttonColours.forEach(function(button){
   button.style.borderColor = button.name;
   button.style.opacity = 0.7;
-  button.addEventListener('click', function(){
-    originalColour = this.name;
-  })
+  $(button).click(function(){ originalColour = this.name })
 })
 
-let smallBtn = document.querySelector('#small')
-smallBtn.addEventListener('click', function(){ reset(16) })
-
-let mediumBtn = document.querySelector('#medium')
-mediumBtn.addEventListener('click', function(){ reset(20) })
-
-let largeBtn = document.querySelector('#large')
-largeBtn.addEventListener('click', function(){ reset(24) })
+$('#small').click(function() { reset(16) })
+$('#medium').click(function(){ reset(20) })
+$('#large').click(function() { reset(24) })
 
 function reset(size){
   grid.forEach(function(element){element.style.backgroundColor = 'white';});
@@ -31,7 +24,6 @@ function reset(size){
   createGrid(size)
   newGame();
 }
-
 
 gridWrapper.addEventListener('mousedown', function(){ mouseDown = true })
 gridWrapper.addEventListener('mouseup', function(){ mouseDown = false })
@@ -56,32 +48,25 @@ function createGrid(gridSize){
 }
 
 function newGame(){
-  grid.forEach(function(element){
-    element.addEventListener('mouseover', hover);
-    element.addEventListener('mousedown', clicked);
-    element.addEventListener('mouseout', original);
-  })
-
-  function hover(){
+  $('grid-square').hover(function() {
     this.style.opacity = 0.5;
     if(!this.style.backgroundColor){ this.style.backgroundColor='grey' }
     if(mouseDown){ return getColour(this) }
-  }
+  })
 
-  function clicked(){
-    return getColour(this);
-  };
+  $('grid-square').click(function() { return getColour(this) })
 
-  function original(){
+  $('grid-square').mouseout(function() {
     this.style.opacity = 1;
     if(this.style.backgroundColor==='grey'){ this.style.backgroundColor='' }
     if(mouseDown){ return getColour(this) }
-  }
+  })
 
   function getColour(colour){
     return colour.style.backgroundColor = colourPicker.style.backgroundColor;
   }
 
+  document.querySelector("#left-bar").style.height = gridWrapper.style.height
 }
 
 createGrid(16)

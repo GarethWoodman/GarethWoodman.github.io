@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Etch-a-Sketch!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./etch-a-sketch.css">
   </head>
 <body>
@@ -12,9 +13,12 @@
         <button id="small">Small</button>
         <button id="medium">Medium</button>
         <button id="large">Large</button>
-        <div id="grid" onmousedown="return false"></div>
+        <div id="middle">
+          <div id="left-bar"></div>
+          <div id="grid" onmousedown="return false"></div>
+        </div>
         <div id="colours">
-            <input class="jscolor" value="✏️">
+          <input class="jscolor" value="✏️">
         </div>
       </div>
     </center>
