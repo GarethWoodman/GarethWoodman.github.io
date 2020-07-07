@@ -1,7 +1,11 @@
 //let gridSize = 16;
 let grid = [];
+let defaultSquareSize = 30
+let gridSize = 16
+let squareSize = 1
 let mouseDown = false;
 let originalColour = 'black';
+
 
 let brs = document.querySelectorAll("br");
 let gridWrapper = document.querySelector("#grid");
@@ -14,14 +18,14 @@ buttonColours.forEach(function(button){
   $(button).click(function(){ originalColour = this.name })
 })
 
-$('#small').click(function() { reset(16) })
-$('#medium').click(function(){ reset(20) })
-$('#large').click(function() { reset(24) })
+$('#small').click(function() { reset(4) })
+$('#medium').click(function(){ reset(2) })
+$('#large').click(function() { reset(1) })
 
 function reset(size){
-  grid.forEach(function(element){element.style.backgroundColor = 'white';});
+  squareSize = size
   removeGrid();
-  createGrid(size)
+  createGrid()
   newGame();
 }
 
@@ -36,10 +40,12 @@ function removeGrid(){
   grid = []
 }
 
-function createGrid(gridSize){
-  for(let y=0; y<gridSize; y++){
-    for(let x=0; x<gridSize; x++){
+function createGrid(){
+  for(let y=0; y<gridSize * squareSize; y++){
+    for(let x=0; x<gridSize * squareSize; x++){
       let gridSquare = document.createElement("grid-square")
+      gridSquare.style.height = defaultSquareSize / squareSize
+      gridSquare.style.width = defaultSquareSize / squareSize
       gridWrapper.appendChild(gridSquare);
       grid.push(gridSquare);
     }
@@ -69,5 +75,5 @@ function newGame(){
   document.querySelector("#left-bar").style.height = gridWrapper.style.height
 }
 
-createGrid(16)
+createGrid()
 newGame()
