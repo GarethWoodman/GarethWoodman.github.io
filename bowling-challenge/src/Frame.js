@@ -21,7 +21,7 @@ class Frame {
   }
 
   hasSpare() {
-    if (this.first + this.second >= 10) return true;
+    if (this.first + this.second == 10) return true;
     return false;
   };
 

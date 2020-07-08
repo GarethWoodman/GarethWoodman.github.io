@@ -29,7 +29,7 @@ $(document).ready(function() {
 
   function _updateFinalFrame(frame) {
     $('#frame-9-second-roll').text(frame.second);
-    if(frame.hasSpare()) { $('#frame-9-third-roll').text(frame.third) }
+    if(frame.first + frame.second >= 10) { $('#frame-9-third-roll').text(frame.third) }
     $('#frame-9-score').text(frame.displayScore());
   }
 
@@ -41,7 +41,7 @@ $(document).ready(function() {
         var difference = (10 - currentFrame.second) + 1
         return _disableButtons(difference)
       }
-      if (currentFrame.hasSpare()) { return _enableButtons() }
+      if (currentFrame.first + currentFrame.second >= 10) { return _enableButtons() }
     }
 
     if (currentFrame.first != null && !currentFrame.hasStrike()) {
