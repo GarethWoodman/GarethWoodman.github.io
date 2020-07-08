@@ -4,7 +4,6 @@ $(document).ready(function() {
 
   console.log("active");
 
-
   $('#0').on('click', function() {
     console.log("button 0");
     scoreBoard.addScore(0);
@@ -74,19 +73,32 @@ $(document).ready(function() {
   function updateScoreBoard() {
     for (var i = 0; i < 10; i++) {
       var frame = scoreBoard.frames[i]
+      if (i === 9) { _updateFinalFrame(frame) }
       $('#frame-' + i + '-first-roll').text(frame.first);
       if(!frame.hasStrike()) $('#frame-' + i + '-second-roll').text(frame.second);
       $('#frame-' + i + '-score').text(frame.displayScore());
     };
-    updateButtons()
+    _updateButtons()
   };
 
-  function updateButtons() {
+  function _updateFinalFrame(frame) {
+    $('#frame-9-first-roll').text(frame.first);
+    $('#frame-9-second-roll').text(frame.second);
+    if(frame.hasSpare()) { $('#frame-9-third-roll').text(frame.third) }
+    $('#frame-9-score').text(frame.displayScore());
+  }
+
+  function _updateButtons() {
     var currentFrame = scoreBoard.currentFrame
 
-    if (currentFrame.isLastFrame() && currentFrame.hasSpare()) {
-      _enableButtons()
-      return;
+    if (currentFrame.isLastFrame()){
+      if (currentFrame.hasStrike() && currentFrame.second != 10) {
+        var difference = (10 - currentFrame.second) + 1
+        return _disableButtons(difference)
+      }
+      if (currentFrame.hasSpare() || currentFrame.first == null )  {
+        return _enableButtons()
+      }
     }
 
     if (currentFrame.first != null && !currentFrame.hasStrike()) {
