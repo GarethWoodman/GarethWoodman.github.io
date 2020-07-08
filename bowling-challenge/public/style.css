@@ -4,13 +4,14 @@ table, td, th {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
 }
 
 th, td {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 h1, p, th, td {
@@ -18,9 +19,15 @@ h1, p, th, td {
 }
 
 #content {
-  width: 70%;
+  width: 700px;
+  height: 96vh;
   padding: 10px;
   text-align: center;
   margin: 0 auto;
   margin: 0 auto;
+}
+
+span {
+  color: #777b84;
+  font-size: 15px;
 }
