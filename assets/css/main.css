@@ -4147,3 +4147,8 @@ input, select, textarea {
 		}
 
 	}
+
+	.project_titles {
+		font-size: 40px;
+		color: #8e8e8e;
+	}
