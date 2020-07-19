@@ -28,6 +28,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+	a.fab:hover {
+    color: red;
+	}
+
 body {
 	line-height: 1;
 }
