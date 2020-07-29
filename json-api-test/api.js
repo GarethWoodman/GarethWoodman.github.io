@@ -6,8 +6,7 @@ class Api {
 
   async patch(number) {
     this.number += number
-    const response = await this._patchData()
-    console.log(response);
+    this._patchData()
   }
 
   async get() {
@@ -23,19 +22,17 @@ class Api {
   }
 
   async _patchData() {
-    var result = this.number
-    const response = await fetch(this.URL, {
+    fetch(this.URL, {
       method: 'PATCH',
       body: JSON.stringify({
         "id": 0,
         "title": "First post!",
         "content": "Second post!",
-        "number": result
+        "number": this.number
       }),
       headers: {
         "Content-type": "application/json",
       }
     })
-    return response
   }
 }
