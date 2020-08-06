@@ -1,12 +1,13 @@
 class Api {
   constructor() {
     this.URL = "https://api-test-dragon.herokuapp.com/objects/0"
-    this.number = 0;
+    this.maxHP = 400
   }
 
   async patch(number) {
     this.number += number
     this._patchData()
+    this._calculateHealth()
   }
 
   async get() {
@@ -34,5 +35,10 @@ class Api {
         "Content-type": "application/json",
       }
     })
+  }
+
+  async _calculateHealth() {
+    let current_width = (100 / this.maxHP) * this.number
+    $('#health').width(current_width)
   }
 }

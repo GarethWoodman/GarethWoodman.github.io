@@ -1,7 +1,6 @@
 $(document).ready(function() {
   var api = new Api();
   api.get();
-
   // $('#submit').on('click', function() {
   //   var text = $('#input').val()
   //   api.patch(text);
@@ -24,5 +23,8 @@ $(document).ready(function() {
 
   function update() {
     api.get();
+    if ($('#health').width() <= 0){
+      $("#winner").text("You win!")
+    }
   }
 });

@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Stupid Dragon Game</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
   <body>
     <h1>JSON API Test</h1>
     <p>The value can be updated by anyone without the page being refreshed!</p>
     <!-- <input id="input"> -->
     <br>
     <!-- <button type="button" id="submit" >Submit</button> -->
+    <div id="health-bar">
+      <div id="health"></div>
+    </div>
     <div id="content"></div>
     <br>
     <button type="button" id="plus">+</button>
     <button type="button"id="minus">-</button>
+    <br>
+    <div id="winner"></div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="api.js"></script>
     <script src="interface.js"></script>
